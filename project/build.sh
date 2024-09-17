@@ -2270,15 +2270,6 @@ if [[ "$LF_TARGET_ROOTFS" = "ubuntu" ]]; then
 		msg_error "Error! Please use sudo ./build.sh to build Ubuntu Image!"
 		exit 1
 	fi
-	if [[ "$LF_SUBMODULES_BY" = "github" ]]; then
-		cp ${SDK_ROOT_DIR}/.gitmodules.github ${SDK_ROOT_DIR}/.gitmodules
-	else
-		if [[ "$LF_SUBMODULES_BY" = "gitee" ]]; then
-			cp ${SDK_ROOT_DIR}/.gitmodules.gitee ${SDK_ROOT_DIR}/.gitmodules
-		else
-			exit 0
-		fi
-	fi
 
 	if [ -d "$UBUNTU_DIR" ] && [ -f ${UBUNTU_DIR}/luckfox-ubuntu-22.04.3.tar.gz.md5 ]; then
 		msg_info "${UBUNTU_DIR} is not empty, skipping submodule update!"
